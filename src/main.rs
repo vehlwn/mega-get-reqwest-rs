@@ -133,7 +133,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .enable_all()
         .build()?;
 
-    return runtime.block_on(async move {
-        return main_coroutine(args).await;
-    });
+    return runtime.block_on(main_coroutine(args));
 }
